@@ -13,15 +13,50 @@
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
+            <button id="darkModeToggle">🌙</button>
         </nav>
     </header>
 
     <main>
-        <!-- Hero / Content will go here -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm Akshat Kumar <span class="wave">👋</span></h1>
+                <p>B.Tech & M.Tech CSE | Aspiring Full-Stack Developer</p>
+                <a href="projects.html" class="btn">View My Work</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="assets/img/Profile.png" alt="Akshat Kumar" class="avatar">
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>© 2025 Akshat Kumar. All rights reserved.</p>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+
+        // Apply saved preference on page load
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            if(toggle) toggle.textContent = '☀️';
+        }
+
+        // Toggle dark mode on button click
+        toggle?.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                toggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                toggle.textContent = '🌙';
+            }
+        });
+    </script>
+
+
 </body>
 </html>

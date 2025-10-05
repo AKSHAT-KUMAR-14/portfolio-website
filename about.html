@@ -17,11 +17,84 @@
     </header>
 
     <main>
-        <!-- Hero / Content will go here -->
+        <section class="about">
+            <h2>About Me</h2>
+            <div class="about-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Education</h3>
+                            <p>M.Tech in Computer Science and Engineering</p>
+                        </div>
+
+                        <div class="card-back">
+                            <ul>
+                                <li>B.Tech in Computer Science and Engineering - Bennett University (2021-2025)</li>
+                                <li>Senior Secondary - CBSE (2019-2021)</li>
+                                <li>Secondary - CBSE (2017-2019)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Skills</h3>
+                            <p>Frontend + Backend</p>
+                        </div>
+                        <div class="card-back">
+                            <ul>
+                                <li>React</li>
+                                <li>Node.js</li>
+                                <li>MongoDB</li>
+                                <li>Tailwind</li>
+                                <li>Git</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Interests</h3>
+                            <p>Web Development, App Development, AI & ML, Startups</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Passionate about building impactful digital solutions and exploring emerging technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>© 2025 Akshat Kumar. All rights reserved.</p>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+
+        // Apply saved preference on page load
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            if(toggle) toggle.textContent = '☀️';
+        }
+
+        // Toggle dark mode on button click
+        toggle?.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                toggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                toggle.textContent = '🌙';
+            }
+        });
+    </script>
+
 </body>
 </html>
